@@ -6,16 +6,16 @@ import Menu
 market :: MonadWidget t m => (Dynamic t Int) -> m ()
 market _ =
   elClass "div" "frame" $ do
-    elClass "div" "title" $ text "Cyclopath"
+    elClass "div" "title" $ text "Cyclopathe"
     elAttr "img" (  "class" =: "principal"
-                 <> "src" =: "//localhost/OpenMk/img/01/1.jpg") $ blank
+                 <> "src" =: "img/01/1.jpg") $ blank
     elClass "div" "frame_bottom" $ do
       elAttr "img" (  "class" =: "img"
-                   <> "src" =: "//localhost/OpenMk/img/01/2.jpg") $ blank
+                   <> "src" =: "img/01/2.jpg") $ blank
       elAttr "img" (  "class" =: "img"
-                   <> "src" =: "//localhost/OpenMk/img/01/3.jpg") $ blank
+                   <> "src" =: "img/01/3.jpg") $ blank
       elAttr "img" (  "class" =: "img"
-                   <> "src" =: "//localhost/OpenMk/img/01/4.jpg") $ blank
+                   <> "src" =: "img/01/4.jpg") $ blank
     
 main :: IO ()
 main = mainWidget $ do
