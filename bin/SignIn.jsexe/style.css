@@ -1,0 +1,16 @@
+section {
+	padding-top : 25px;
+	padding-left : 25px;
+	margin-left : 200px;
+}
+
+.title {
+	font-size : 20px;
+	font-weight : bold;
+	text-decoration : underline;
+	margin-bottom : 25px;
+}
+
+.info {
+	margin-bottom : 25px;
+}
