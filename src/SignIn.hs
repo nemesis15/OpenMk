@@ -42,6 +42,8 @@ signin =
         evPassword <- return $ tag (current dynPassword) (updated $ _textInput_hasFocus password)
         password <- textInput $ def & attributes .~ constDyn ("class" =: "password")
                                     & textInputConfig_initialValue .~ "Password"
+                                    & textInputConfig_inputType .~ "password"
                                     & setValue .~ fmap (\(foc,val) -> focus' foc val "Password") evPassword
+        el "div" $ blank
         button "SIGN IN"
     return ()
