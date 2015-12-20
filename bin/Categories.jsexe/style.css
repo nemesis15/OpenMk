@@ -1,0 +1,12 @@
+.frame {
+	display : inline-block;
+	vertical-align : top;
+	margin-top : 25px;
+}
+
+.frame div {
+	font-weight : bold;
+	height : 200px;
+	width : 200px;
+	margin-right : 150px;
+}

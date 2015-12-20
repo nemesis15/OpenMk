@@ -15,6 +15,7 @@ market _ =
       elAttr "img" (  "class" =: "img"
                    <> "src" =: "img/01/3.jpg") $ blank
       elAttr "img" (  "class" =: "img"
+                   <> "style" =: "border-right : none;"
                    <> "src" =: "img/01/4.jpg") $ blank
     
 main :: IO ()

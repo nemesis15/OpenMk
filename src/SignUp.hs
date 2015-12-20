@@ -11,7 +11,6 @@ import Data.Maybe
     
 main = mainWidget $ menu SignUp >> frame
 
-
 frame :: MonadWidget t m => m ()
 frame = do
   gen <- liftIO getStdGen
@@ -31,24 +30,28 @@ focus' foc val def =
     else val
 
 
-
+input' :: MonadWidget t m => String -> Map String String -> String -> m (TextInput t)
+input' initVal attrs type' = do
+  rec el "div" $ dynShow initVal $ _textInput_hasFocus _input
+      dynInput <- combineDyn (\a b -> (a,b)) (_textInput_hasFocus _input) (value _input)
+      evInput <- return $ tag (current dynInput) (updated $ _textInput_hasFocus _input)
+      _input <- textInput $ def & attributes .~ constDyn attrs
+                                & textInputConfig_initialValue .~ initVal
+                                & textInputConfig_inputType .~ type'
+                                & setValue .~ fmap (\(foc,val) -> focus' foc val initVal) evInput
+  return _input
+    
 signup :: MonadWidget t m => m ()
 signup =
   elClass "div" "signup" $ do
-    rec el "div" $ dynShow "Email address" $ _textInput_hasFocus username
-        dynUsername <- combineDyn (\a b -> (a,b)) (_textInput_hasFocus username) (value username)
-        evUsername <- return $ tag (current dynUsername) (updated $ _textInput_hasFocus username)
-        username <- textInput $ def & attributes .~ constDyn ("class" =: "email")
-                                    & textInputConfig_initialValue .~ "Email address"
-                                    & setValue .~ fmap (\(foc,val) -> focus' foc val "Email address") evUsername
-                                      
-        el "div" $ dynShow "Password" $ _textInput_hasFocus password
-        dynPassword <- combineDyn (\a b -> (a,b)) (_textInput_hasFocus password) (value password)
-        evPassword <- return $ tag (current dynPassword) (updated $ _textInput_hasFocus password)
-        password <- textInput $ def & attributes .~  constDyn ("class" =: "password")
-                                    & textInputConfig_initialValue .~ "Password"
-                                    & textInputConfig_inputType .~ "password"
-                                    & setValue .~ fmap (\(foc,val) -> focus' foc val "Password") evPassword
-        el "div" $ blank
-        button "CREATE ACCOUNT"
+    name <- input' "Nom" ("class" =: "nom") "text"
+    prenom <- input' "Prenom" ("class" =: "prenom") "text"
+    email <- input' "Email address" ("class" =: "email") "text"
+    password <- input' "Password" ("class" =: "password") "password"
+    country <- input' "Country" ("class" =: "country") "text"
+    city <- input' "City" ("class" =: "city") "text"
+    postal <- input' "postal" ("class" =: "postal") "text"
+    el "div" $ blank
+    button "CREATE ACCOUNT"
     return ()
+

@@ -11,9 +11,9 @@ ghcjs_HXVFfu8XQIWJ1W77s2SHGo:88929
 ghcjs_HwzX8eXAwveCUOoAWSdVDg:9294
 integer-gmp:             5734
 lens_6zIy0Su7YdRJ1tzFXLU1du:460
-main:                    26063
+main:                    42627
 refle_7iwpocFgnHQGhHLu6WiQzl:200721
-refle_BmKSHcKzE5FDdieyLaYalI:395345
+refle_BmKSHcKzE5FDdieyLaYalI:395574
 reftf_JOU40Nd0lxyACBtr3v80Qj:1202
 text_EUgTRFf4B9F3jYYcZNn3Au:3785
 trans_KzbnBSIEqPI2eU1Inn4mzm:18111
@@ -120,7 +120,7 @@ lens_6zIy0Su7YdRJ1tzFXLU1du
     Control.Lens.Setter:                460
 
 main
-    Main:                               10180
+    Main:                               26744
     Menu:                               15883
 
 refle_7iwpocFgnHQGhHLu6WiQzl
@@ -134,7 +134,7 @@ refle_BmKSHcKzE5FDdieyLaYalI
     Reflex.Class:                       11942
     Reflex.Dynamic:                     7938
     Reflex.Host.Class:                  2209
-    Reflex.Spider.Internal:             368523
+    Reflex.Spider.Internal:             368752
 
 reftf_JOU40Nd0lxyACBtr3v80Qj
     Control.Monad.Ref:                  1202
@@ -151,5 +151,5 @@ trans_KzbnBSIEqPI2eU1Inn4mzm
 
 
 
-packed metadata: 265137
+packed metadata: 267279
 
