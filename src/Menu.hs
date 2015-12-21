@@ -11,21 +11,24 @@ focus option option' =
   then el "div" $ blank
   else el "span" $ blank
 
-link :: MonadWidget t m => String -> Option -> Option -> String -> m ()
-link t option option' page =
+link :: MonadWidget t m => String -> String -> Option -> Option -> String -> m ()
+link t icon option option' page =
   el "table" $
     el "tr" $ do
       elClass "td" "select" $ focus option option'
       el "td" $
          el "li" $
             elAttr "a" (  "style" =: linkStyle option option'
-                        <> "href" =: page) $ text t
+                        <> "href" =: page) $ do
+                elAttr "img" ("src" =: icon
+                             <> "style" =: "width : 28px;height:28px;display:inline-block; vertical-align:middle;margin-right : 10px;") $ blank
+                text t
 
   where
     linkStyle option option' =
         if option == option'
-        then "background-color : #006600;"
-        else ""
+        then "background-color : #006600;display:inline-block; vertical-align:middle;"
+        else "display:inline-block; vertical-align:middle;"
 
 search :: MonadWidget t m => m ()
 search = do
@@ -41,10 +44,10 @@ menu option =
      el "ul" $ do
        logo
        search
-       link "Anythinglocal" OpenMk option "index.html"
-       link "Categories" Categories option "categories.html"
-       link "Sign in" SignIn option "signin.html"
-       link "Sign up" SignUp option "signup.html"
-       link "Politic" Politic option "politic.html"
-       link "Help" Help option "help.html"
-       link "About" About option "about.html"
+       link "Anythinglocal" "img/shopping.png" OpenMk option "index.html"
+       link "Categories" "img/categories-128.png" Categories option "categories.html"
+       link "Sign in" "img/signin.png" SignIn option "signin.html"
+       link "Sign up" "img/signup.png" SignUp option "signup.html"
+       link "Politic" "img/politic.png" Politic option "politic.html"
+       link "Help" "img/help.png" Help option "help.html"
+       link "About" "img/about.png" About option "about.html"

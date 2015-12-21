@@ -44,13 +44,13 @@ input' initVal attrs type' = do
 signup :: MonadWidget t m => m ()
 signup =
   elClass "div" "signup" $ do
-    name <- input' "Nom" ("class" =: "nom") "text"
-    prenom <- input' "Prenom" ("class" =: "prenom") "text"
-    email <- input' "Email address" ("class" =: "email") "text"
-    password <- input' "Password" ("class" =: "password") "password"
-    country <- input' "Country" ("class" =: "country") "text"
-    city <- input' "City" ("class" =: "city") "text"
-    postal <- input' "postal" ("class" =: "postal") "text"
+    name <- input' "Last name" ("class" =: "nom") "text"
+    prenom <- input' "First name" ("class" =: "prenom") "text"
+    email <- input' "* Email address" ("class" =: "email") "text"
+    password <- input' "* Password" ("class" =: "password") "password"
+    country <- input' "* Country" ("class" =: "country") "text"
+    city <- input' "* City" ("class" =: "city") "text"
+    postal <- input' "ZIP code" ("class" =: "postal") "text"
     el "div" $ blank
     button "CREATE ACCOUNT"
     return ()

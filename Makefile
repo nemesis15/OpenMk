@@ -13,6 +13,7 @@ clean :
 	rm -rf src/*.js_o
 
 install :
+	cp -R src/php/* bin/php
 	cp bin/OpenMk.jsexe/index.html bin/index.html
 	cp bin/Categories.jsexe/index.html bin/categories.html
 	cp bin/About.jsexe/index.html bin/about.html
