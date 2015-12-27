@@ -2,14 +2,12 @@ section {
 	position:absolute;
 	background-color : white;
 	background-size:cover;
+	background-position:center top;
 	text-align : center;
 	width: calc(100% - 225px);
 	height:100%;
 }
 
-section:after {
-	background: hsla(180,0%,50%,0.50);
-}
 
 .signup {
 	position : absolute;
@@ -56,7 +54,7 @@ section:after {
 	padding-top : 4px;
 	padding-bottom : 4px;
 	border-radius : 2px;
-	background-color : red;
+	background-color : #990000;
 	color : white;
 	font-weight : bold;
 }

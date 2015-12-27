@@ -1,4 +1,5 @@
 CREATE TABLE User (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(30),
     lastname VARCHAR(30),
     email VARCHAR(30) NOT NULL,
@@ -6,6 +7,6 @@ CREATE TABLE User (
     country VARCHAR(30) NOT NULL,
     city VARCHAR(30) NOT NULL,
     zipcode VARCHAR(6),
-    PRIMARY KEY (email)
+    PRIMARY KEY (id)
 );
 

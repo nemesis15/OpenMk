@@ -79,7 +79,7 @@ makeSignup signup = Signup { lastname = signup !! 0,
                                         
     
 signupReq :: [String] -> XhrRequest
-signupReq par = xhrRequest "GET" ("/php/signup.php?par=" ++  (BS.unpack $ encode $ makeSignup par)) def
+signupReq par = xhrRequest "GET" ("/OpenMk/php/signup.php?par=" ++  (BS.unpack $ encode $ makeSignup par)) def
 
 -- Widget signup
 
@@ -87,7 +87,7 @@ frame :: MonadWidget t m => m a -> m (Event t ())
 frame body = do
   gen <- liftIO getStdGen
   let (img, _) = randomR (1,4) gen :: (Int, StdGen)
-  (e, _) <- elAttr' "section" ("style" =: ("background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/login/" ++ show img ++ ".jpg');")) $ body
+  (e, _) <- elAttr' "section" ("style" =: ("background-image: url('img/login/" ++ show img ++ ".jpg');")) $ body
   return $ domEvent Click e
 
 

@@ -56,11 +56,33 @@ setLogin val =
             storageSetItem storage "username" val
 
 
-getLogin :: String -> String -> IO String
-getLogin key def =
+isLogin :: IO Bool
+isLogin =
   do mbWindow <- currentWindow
      case mbWindow of
-       Nothing -> return def
+       Nothing -> return False
        Just win ->
          do Just storage <- domWindowGetLocalStorage win
-            storageGetItem storage key
+            item <- storageGetItem storage "login"
+            if Prelude.null item
+            then return False
+            else return $ ((read item) :: Bool)
+                                  
+getLogin :: IO String
+getLogin =
+  do mbWindow <- currentWindow
+     case mbWindow of
+       Nothing -> return ""
+       Just win ->
+         do Just storage <- domWindowGetLocalStorage win
+            storageGetItem storage "username"
+
+setLogout :: IO ()
+setLogout =
+  do mbWindow <- currentWindow
+     case mbWindow of
+       Nothing -> return ()
+       Just win ->
+         do Just storage <- domWindowGetLocalStorage win
+            storageSetItem storage "login" $ show False
+            storageRemoveItem storage "username"

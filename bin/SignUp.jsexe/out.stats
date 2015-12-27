@@ -2,7 +2,7 @@ code size summary per package:
 
 aeson_A3Q8o0n6gTvGxtLnrAP7gO:351376
 attop_0CrfXeJXtnDFx07RJOIVI4:139941
-base:                    538531
+base:                    541515
 bytes_7xzRCqmYKEUD9kT8JNNjd6:77553
 conta_5w3UY4chXx62LVUOUrXeRm:121496
 depen_3ZazWrAF611CC0pGA27xUj:2889
@@ -11,11 +11,11 @@ email_GrA0kl2KnSFIsxPKnwQY60:97472
 excep_Dt64kPlbg5dLPF70RHEAAf:4658
 ghc-prim:                33932
 ghcjs_6fO2sBDbxgl1lxlAeHzYMO:2354
-ghcjs_HXVFfu8XQIWJ1W77s2SHGo:138462
+ghcjs_HXVFfu8XQIWJ1W77s2SHGo:139347
 ghcjs_HwzX8eXAwveCUOoAWSdVDg:9646
 integer-gmp:             43010
 lens_6zIy0Su7YdRJ1tzFXLU1du:464
-main:                    224014
+main:                    238695
 rando_3e2beemixydBACmXmsTUb2:28828
 refle_7iwpocFgnHQGhHLu6WiQzl:431730
 refle_BmKSHcKzE5FDdieyLaYalI:470431
@@ -57,7 +57,7 @@ base
     Control.Monad.Fix:                  584
     Data.Either:                        4934
     Data.Fixed:                         2073
-    Data.Foldable:                      3580
+    Data.Foldable:                      3767
     Data.Function:                      86
     Data.Functor.Identity:              224
     Data.Maybe:                         1489
@@ -115,6 +115,7 @@ base
     System.Posix.Internals:             16219
     Text.ParserCombinators.ReadP:       23833
     Text.ParserCombinators.ReadPrec:    5273
+    Text.Read:                          2797
     Text.Read.Lex:                      76271
 
 bytes_7xzRCqmYKEUD9kT8JNNjd6
@@ -167,7 +168,7 @@ ghcjs_HXVFfu8XQIWJ1W77s2SHGo
     GHCJS.DOM.EventTargetClosures:      2050
     GHCJS.DOM.NamedNodeMap:             663
     GHCJS.DOM.Node:                     2200
-    GHCJS.DOM.Storage:                  2232
+    GHCJS.DOM.Storage:                  3117
     GHCJS.DOM.Types:                    79283
 
 ghcjs_HwzX8eXAwveCUOoAWSdVDg
@@ -182,9 +183,9 @@ lens_6zIy0Su7YdRJ1tzFXLU1du
     Control.Lens.Setter:                464
 
 main
-    Main:                               186646
-    Menu:                               19211
-    Utils:                              18157
+    Main:                               186720
+    Menu:                               29299
+    Utils:                              22676
 
 rando_3e2beemixydBACmXmsTUb2
     System.Random:                      28828
@@ -243,5 +244,5 @@ vecto_EcjDyDlwiMg9atEfp9gJxH
 
 
 
-packed metadata: 518707
+packed metadata: 521843
 

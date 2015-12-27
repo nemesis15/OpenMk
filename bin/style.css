@@ -52,7 +52,7 @@ nav li:hover {
 	width : 5px;
 }
 
-nav div {
+.focus {
 	width : 5px;
 	height : 50px;
 	background-color : #ff642f;
@@ -69,6 +69,15 @@ nav a {
 	text-decoration:none;
 	color : white;
 	outline : none;
+}
+
+.user {
+	font-family : sans-serif;
+	font-weight : bold;
+	font-size : 15px;
+	color : white;
+	word-wrap: break-word;
+	margin-bottom : 15px;
 }
 
 section {
