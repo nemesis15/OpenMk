@@ -1,8 +1,16 @@
 module Menu where
 
+import GHCJS.Types
+import GHCJS.Foreign
+import GHCJS.DOM
+import GHCJS.DOM.DOMWindow
+import GHCJS.DOM.Storage
 import Reflex.Dom hiding (link)
+import Control.Monad.IO.Class
 import Data.Monoid
-   
+
+import Utils
+    
 data Option = OpenMk | Categories | SignIn | SignUp | Politic | Help | About deriving (Show, Eq)
 
 focus :: MonadWidget t m => Option -> Option -> m ()
@@ -37,11 +45,13 @@ search = do
 
 logo :: MonadWidget t m => m ()
 logo = elAttr "img" ("src" =: "img/Open_market_icon.png") $ blank
-    
+                             
 menu :: MonadWidget t m => Option -> m ()
 menu option =
   el "nav" $
      el "ul" $ do
+       login <- liftIO $ getLogin "user" ""
+       el "div" $ text login
        logo
        search
        link "Anythinglocal" "img/shopping.png" OpenMk option "index.html"

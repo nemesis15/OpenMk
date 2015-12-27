@@ -1,8 +1,4 @@
 <?php
-   if(empty($_GET["par"])) {
-     exit();
-   }
-
    $servername = "192.168.2.29";
    $username = "rafael";
    $password = "739148625";
@@ -17,6 +13,10 @@
    }
       
 
+ if(empty($_GET["par"])) {
+     exit();
+  }
+
   // get Info 
   $json = $_GET["par"];
   $signup = json_decode($json);
@@ -29,13 +29,11 @@
   $city = $signup->{'city'};
   $zipcode = $signup->{'zipcode'};
 
-  // requirements
-  $sql = "SELECT * FROM User WHERE email='$email';";
-  $result = $conn->query($sql);
+//  $sql = "SELECT * FROM User WHERE email='$email'";
+//  $result = $conn->query($sql);
 
-  if($result->num_rows != 0) {
-      echo '{ "ok" : false, "r_error" : { "e_email" : "this email is already in use", "e_default" : "" }}';
-      exit();
+  if(sizeof($result) != 0) {
+      echo ''
   }
 
   $sql = "INSERT INTO User "
@@ -49,9 +47,9 @@
        
 
   if ($conn->query($sql) === TRUE) {
-    echo '{ "ok" : true, "r_error" : { "e_email" : "", "e_default" : "" }}';
+    echo "{ \"ok\" : true, error : { e_email : '', e_default : '' }";
   } else {
-    echo '{ "ok" : false, "r_error" : { "e_email" : "", "e_default" : "' .  $conn->error . '}}';
+    echo "{ ok : False, error : { e_email : '', e_default : " .  $conn->error . "}}";
   }
 
   $conn->close();
